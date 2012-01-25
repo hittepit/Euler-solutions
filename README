@@ -1,2 +1,5 @@
 Solutions du projet Euler en Scala
 http://projecteuler.net/
+
+Solution 3: ne fonctionne pas? Trop lent?
+Solution 12 donne la solution, assez rapidement (4s sur ma machine), mais utiliser des Actor
