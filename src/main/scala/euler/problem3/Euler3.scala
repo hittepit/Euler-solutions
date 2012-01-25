@@ -3,15 +3,25 @@ package euler.problem3
 object Euler3 {
 	def main(args: Array[String]) {
 		val value = 600851475143L
+		val max = Math.sqrt(value).longValue()
 		
-		var i = value
-		while(i>=1){
-		  if(value%i==0 && isPrime(i)){
-		    println("Solution = "+i)
-		    System.exit(0)
+		var i = 1L
+		var found = false
+		var bestSolution=0L
+		while(i<=max && !found){
+		  if(value%i==0){
+		    val highFactor = value/i
+		    if(isPrime(highFactor)){
+		      bestSolution = highFactor
+		      found=true
+		    } else if(isPrime(i)){
+		      bestSolution = i
+		    }
 		  }
-		  i-=1
+		  i+=1
 		}
+		
+		println("Solution = "+bestSolution)
 	}
 	
 	def isPrime(value:Long) = {
