@@ -1,4 +1,8 @@
-Solutions du projet Euler en Scala
+Solutions for project Euler in Scala
 http://projecteuler.net/
 
-Solution 12 donne la solution, assez rapidement (4s sur ma machine), mais utiliser des Actor
+Solved:
+1, 2, 3, 4, 5, 12, 18, 67
+
+TODO
+Try to use Actor for problem 12
