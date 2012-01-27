@@ -3,6 +3,7 @@ package euler{
     
 	import problem3.Euler3
 	import utils.Timer
+	import utils.Primes._
 	
 	/**
 	 * Solution 1 more functionnal but much more slower. Needs a max number (105000) empiracally determined
@@ -28,7 +29,7 @@ package euler{
 		  var start:Long = 1L
 		  while(index<nth){
 			  start+=1
-			  if(Euler3.isPrimeV1(start)){
+			  if(isPrimeV1(start)){
 			    index +=1
 			  }
 		  }
