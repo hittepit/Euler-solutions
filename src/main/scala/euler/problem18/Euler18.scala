@@ -4,16 +4,11 @@ import java.io.FileReader
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import euler.utils.Timer
+import euler.utils.Files._
 
 object Euler18 extends Timer{
 	def main(args: Array[String]) {
-		val f = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("euler/problem18/numbers.txt")))
-		var ligne =""
-		var data=List[String]()
-		do{
-		  ligne = f.readLine()
-		  if(ligne != null) data=data:::List(ligne)
-		}while(ligne!=null)
+	  val data = read("euler/problem18/numbers.txt")
 
 		println(solve(data))
 	}
