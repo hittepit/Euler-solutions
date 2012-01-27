@@ -3,8 +3,7 @@ package euler{
   package problem10{
 	import scala.actors.Actor._
   import scala.actors._
-
-	import utils.Primes._
+  import utils.Primes._
   import utils.Timer
 
 	object Euler10 extends Timer{
@@ -32,8 +31,8 @@ package euler{
 	    val solution = findPrimes((2L to max).toList,Nil)
 	    (0L/:solution._2)(_+_)
 	  }
-	
-  }
+	}
+
   }
 }
 
