@@ -22,7 +22,7 @@ object Euler4 {
 	def isPalindrome(i:Int) = {
 	  val s=i.toString()
 	  val center = s.length()/2-1
-	  (0 to center).find((x:Int)=>s.charAt(x)!=s.charAt(s.length()-x-1)) match {
+	  (0 to center).find((x:Int)=>s(x)!=s(s.length()-x-1)) match {
 	    case None => true
 	    case _ => false
 	  }
