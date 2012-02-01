@@ -1,8 +1,10 @@
 package euler.utils
 
+import scala.math._
+
 object Primes {
 	def isPrimeV1(value:Long) = {
-	  val max = Math.sqrt(value).longValue()
+	  val max = sqrt(value).longValue()
 	  var i = 2L
 	  var prime = true
 	  while(i<=max && prime){
@@ -13,6 +15,6 @@ object Primes {
 	  prime
 	}
 	
-	def isPrimeV2(value:Long) = ! (2L to Math.sqrt(value).longValue()).exists(value%_==0)
+	def isPrimeV2(value:Long) = ! (2L to sqrt(value).longValue()).exists(value%_==0)
 
 }
