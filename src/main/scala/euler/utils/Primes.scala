@@ -15,6 +15,6 @@ object Primes {
 	  prime
 	}
 	
-	def isPrimeV2(value:Long) = ! (2L to sqrt(value).longValue()).exists(value%_==0)
+	def isPrimeV2(value:Long) = value!=1 && ! (2L to sqrt(value).longValue()).exists(value%_==0)
 
 }
