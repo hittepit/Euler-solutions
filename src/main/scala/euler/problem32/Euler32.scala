@@ -1,5 +1,6 @@
 package euler.problem32
 
+import euler.utils.Math._
 import scala.collection.mutable._
 
 object Euler32 {
@@ -26,6 +27,4 @@ object Euler32 {
 	  }
 	  ds
 	}
-	
-	def isPandigital(s:String) = s.length()==9 && (s.toSet-'0').size==9
 }
