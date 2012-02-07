@@ -11,7 +11,7 @@ object Euler32 {
 	  while(x<999999L){
 	  	divisors(x).foreach{(d:Long) =>
 	  	  val s = x.toString()+d.toString()+(x/d).toString()
-	  	  if(isPandigital(s)) products+=x
+	  	  if(isNinePandigital(s)) products+=x
 	  	}
 	  	x+=1
 	  }

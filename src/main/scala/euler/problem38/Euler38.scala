@@ -10,7 +10,7 @@ object Euler38 {
 	    val mult = (1 to max).toList
 	    (1 to 99999).foreach{(n:Int) =>
 	      val s = concatenedProduct(n,mult)
-	      if(isPandigital(s) && s.toInt>maximum) {
+	      if(isNinePandigital(s) && s.toInt>maximum) {
 	        println(n+"*"+mult+"="+s)
 	        maximum = s.toInt
 	      }
