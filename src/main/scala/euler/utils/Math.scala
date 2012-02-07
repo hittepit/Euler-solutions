@@ -19,10 +19,10 @@ object Math {
 	  result
 	}
 	
-	def combine[T](l:List[T]):List[List[T]] = l match {
+	def permute[T](l:List[T]):List[List[T]] = l match {
 	  case a::Nil => List(List(a))
 	  case n::rest =>  var result = List[List[T]]() 
-	  				combine(rest).foreach{ (el:List[T]) =>  
+	  				permute(rest).foreach{ (el:List[T]) =>  
 	  				  result:::=weaveElement(n,el)
 	  				}
 	  				result
