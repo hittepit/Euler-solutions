@@ -1,6 +1,7 @@
 package euler.problem
 
 import org.scalatest.FunSuite
+
 import euler.problem1.Euler1
 import euler.problem2.Euler2
 import euler.problem3.Euler3
@@ -10,10 +11,8 @@ import euler.problem6.Euler6
 import euler.problem7.Euler7
 import euler.problem8.Euler8
 import euler.problem9.Euler9
-import euler.problem43.Euler43
-import euler.problem44.Euler44
 
-class TestEuler extends FunSuite {  
+class TestEuler1To10 extends FunSuite {  
   
   test("Euler1"){
     val cut = new Euler1
@@ -60,13 +59,4 @@ class TestEuler extends FunSuite {
 	  assert("31875000"==cut.execute)
   }
   
-  test("Euler43"){
-    val cut = new Euler43
-    assert("16695334890"==cut.execute)
-  }
-  
-  test("Euler44"){
-    val cut = new Euler44
-    assert("5482660"==cut.execute)
-  }
 }

@@ -39,4 +39,14 @@ object Math {
     def primes(start:Long):Stream[Long] = start #:: sequence(start).filter(isPrime(_)) 
        
     def isPrime(x:Long) = !(2L to sqrt(x).toLong).exists(x%_==0)
+  
+  def isPentagonal(number:Long) = {
+    val index = (1+sqrt(1+24*number))/6
+    index.toLong == index
+  }
+  
+  def isHexagonal(number:Long) = {
+    val index = (1+sqrt(1+8*number))/4
+    index.toLong == index
+  }
 }
