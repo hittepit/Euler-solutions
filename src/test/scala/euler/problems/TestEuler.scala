@@ -10,6 +10,8 @@ import euler.problem6.Euler6
 import euler.problem7.Euler7
 import euler.problem8.Euler8
 import euler.problem9.Euler9
+import euler.problem43.Euler43
+import euler.problem44.Euler44
 
 class TestEuler extends FunSuite {  
   
@@ -56,5 +58,15 @@ class TestEuler extends FunSuite {
   test("Euler9"){
 	  val cut = new Euler9
 	  assert("31875000"==cut.execute)
+  }
+  
+  test("Euler43"){
+    val cut = new Euler43
+    assert("16695334890"==cut.execute)
+  }
+  
+  test("Euler44"){
+    val cut = new Euler44
+    assert("5482660"==cut.execute)
   }
 }
