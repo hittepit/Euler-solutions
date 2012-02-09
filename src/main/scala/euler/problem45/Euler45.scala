@@ -11,6 +11,4 @@ object Euler45 {
 
 class Euler45 {
   def execute = triangle(286).find{(candidate:Long) => isPentagonal(candidate) && isHexagonal(candidate)}.get.toString
-    
-  def triangle(index:Long):Stream[Long] = (index*(index+1)/2) #:: triangle(index+1)
 }

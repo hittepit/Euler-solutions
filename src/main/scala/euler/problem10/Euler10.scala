@@ -1,8 +1,6 @@
 package euler{
 	
   package problem10{
-	import scala.actors.Actor._
-  import scala.actors._
   import utils.Math._
   import utils.Timer
 
@@ -31,6 +29,10 @@ package euler{
 	    val solution = findPrimes((2L to max).toList,Nil)
 	    (0L/:solution._2)(_+_)
 	  }
+	}
+	
+	class Euler10 {
+	  def execute = (0L/:((2L to 2000000L).par.filter(isPrime(_))))(_+_).toString()
 	}
 
   }

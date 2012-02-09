@@ -1,25 +1,23 @@
 package euler.problem12
 
+import euler.utils.Math._
+
 object Euler12 {
 	def main(args: Array[String]) {
-	  var start = 0
-	  var nDivisor = 0
-	  var precTriangle = 0
-	  do{
-	    start+=1
-		precTriangle+=start
-		nDivisor = totalDivisor(precTriangle)
-		println(precTriangle+" "+nDivisor)
-	  }while(nDivisor<500)
-	    
-	  println("Solution = "+precTriangle)
+	  println(new Euler12().execute)
 	}
-	
-	def totalDivisor(x:Int) = {
-	  var total = 0
-	  val max = Math.sqrt(x).toInt
+}
 
-	  (1 to max).foreach{(i:Int)=> if(x%i==0) if(x==max)total+=1 else total+=2}
+class Euler12 {
+  def execute = {
+    triangle(1).find((number:Long) => totalDivisor(number) > 500).get.toString
+  }
+	
+	def totalDivisor(x:Long) = {
+	  var total = 0
+	  val max = Math.sqrt(x).toLong
+
+	  (1L to max).foreach{(i:Long)=> if(x%i==0) if(x==max)total+=1 else total+=2}
 	  total
 	}
 }

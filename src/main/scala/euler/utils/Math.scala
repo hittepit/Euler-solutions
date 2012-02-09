@@ -39,7 +39,15 @@ object Math {
     def primes(start:Long):Stream[Long] = start #:: sequence(start).filter(isPrime(_)) 
        
     def isPrime(x:Long) = !(2L to sqrt(x).toLong).exists(x%_==0)
-  
+
+    def triangle(index:Long):Stream[Long] = (index*(index+1)/2) #:: triangle(index+1)
+
+	
+	def isTriangle(number:Int) = {
+	  val index =(sqrt(1+8*number)-1)/2
+	  index.toInt == index
+	}
+	
   def isPentagonal(number:Long) = {
     val index = (1+sqrt(1+24*number))/6
     index.toLong == index
