@@ -1,6 +1,6 @@
 package euler.problem35
 
-import euler.utils.Primes._
+import euler.utils.Math._
 import scala.collection._
 
 object Euler35 {
@@ -8,7 +8,7 @@ object Euler35 {
 		val max = 1000000
 		
 		val circularPrimes = (Set[Int]()/:(2 to max))((primes:Set[Int],candidate) =>
-			if((true /: rotations(candidate.toString()))((isPrime:Boolean,s:String)=>isPrime && isPrimeV2(s.toInt)))
+			if((true /: rotations(candidate.toString()))((isP:Boolean,s:String)=>isP && isPrime(s.toLong)))
 			  primes+candidate
 			  else
 			    primes

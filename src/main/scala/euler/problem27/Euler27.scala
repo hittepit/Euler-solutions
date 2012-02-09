@@ -1,5 +1,5 @@
 package euler{
-  import utils.Primes._
+  import utils.Math._
   
   package problem27{
 
@@ -31,7 +31,7 @@ package euler{
 		  do{
 			  result = index*index+a*index+b
 			  index+=1
-		  }while(result>0 && isPrimeV2(result))
+		  }while(result>0 && isPrime(result))
 		    
 		  index-2
 		}

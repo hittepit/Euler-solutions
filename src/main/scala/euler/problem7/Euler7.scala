@@ -1,16 +1,15 @@
-package euler{
-  package problem7{
+package euler.problem7
     
-	import problem3.Euler3
-	import utils.Timer
-	import utils.Primes._
+	import euler.utils.Timer
+
+	import euler.utils.Math._
+	import euler.problems.Solution
 	
 	/**
 	 * Solution 1 more functionnal but much more slower. Needs a max number (105000) empiracally determined
 	 */
 	object Euler7 extends Timer{
 		def main(args: Array[String]) {
-	//		println(solve1(10001))
 			println(solve2(10001))
 		}
 		
@@ -29,12 +28,26 @@ package euler{
 		  var start:Long = 1L
 		  while(index<nth){
 			  start+=1
-			  if(isPrimeV1(start)){
+			  if(isPrime(start)){
 			    index +=1
 			  }
 		  }
 		  start
 		}
 	}
+
+  class Euler7 extends Solution {
+    def execute = solve(10001).toString
+
+    def solve(nth:Int):Long = {
+		  var index = 0
+		  var start:Long = 1L
+		  while(index<nth){
+			  start+=1
+			  if(isPrime(start)){
+			    index +=1
+			  }
+		  }
+		  start
+		}
   }
-}

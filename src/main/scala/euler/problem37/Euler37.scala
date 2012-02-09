@@ -1,6 +1,6 @@
 package euler.problem37
 
-import euler.utils.Primes._
+import euler.utils.Math._
 
 object Euler37 {
 	def main(args: Array[String]) {
@@ -8,7 +8,7 @@ object Euler37 {
 		var number = 10L
 		
 		while(primes.size<11){
-		  if(isPrimeV2(number)&&leftPrime(number) && rightPrime(number)){
+		  if(isPrime(number)&&leftPrime(number) && rightPrime(number)){
 		    println(number)
 		    primes+=number
 		  }
@@ -21,7 +21,7 @@ object Euler37 {
 	def leftPrime(n:Long):Boolean = {
 	  val right = n.toString().drop(1).toLong
 //	  println("R"+right)
-	  if(isPrimeV2(right)){
+	  if(isPrime(right)){
 	    if(right>9){
 	      leftPrime(right)
 	    } else {
@@ -35,7 +35,7 @@ object Euler37 {
 	def rightPrime(n:Long):Boolean = {
 	  val left = n.toString().dropRight(1).toLong
 //	  println("L"+left)
-	  if(isPrimeV2(left)){
+	  if(isPrime(left)){
 	    if(left>9){
 	      rightPrime(left)
 	    } else {

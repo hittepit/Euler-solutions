@@ -47,7 +47,7 @@ class Euler4 extends Solution {
 		  alpha-=1
 		}
 		
-		solution.toString()
+		solution._3.toString()
 	}
 	def isPalindrome(i:Int) = {
 	  val s=i.toString()

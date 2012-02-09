@@ -1,7 +1,6 @@
 package euler.problem41
 
 import euler.utils.Math._
-import euler.utils.Primes._
 
 
 object Euler41 {
@@ -11,7 +10,7 @@ object Euler41 {
 	    val l = (1 to i).toList
 	    permute(l).foreach{(candidateList:List[Int]) =>
 	      val candidate = (0/:candidateList)(_*10+_)
-	      if(isPrimeV2(candidate) && candidate>solution){
+	      if(isPrime(candidate) && candidate>solution){
 		    solution = candidate
 		  }
 	    }

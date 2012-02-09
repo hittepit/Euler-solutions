@@ -1,5 +1,7 @@
 package euler.utils
 
+import scala.math._
+
 object Math {
 	def fact(i:BigInt):BigInt = if(i==0) BigInt(1) else i*fact(i-1)
 	def fact(i:Long):Long = if(i==0) 1L else i*fact(i-1)
@@ -27,4 +29,12 @@ object Math {
 	  				}
 	  				result
 	}
+
+	def fibo(x:Int,y:Int):Stream[Int] = x #:: fibo(y,x+y)
+       
+    def sequence(start:Int):Stream[Int] = start #:: sequence(start+1)
+       
+    def primes(start:Int):Stream[Int] = start #:: sequence(start).filter(isPrime(_)) 
+       
+    def isPrime(x:Long) = !(2L to sqrt(x).toLong).exists(x%_==0)
 }
