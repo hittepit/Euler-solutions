@@ -3,6 +3,7 @@ import org.scalatest.FunSuite
 import euler.problem45.Euler45
 import euler.problem44.Euler44
 import euler.problem43.Euler43
+import euler.problem46.Euler46
 
 class TestEuler41To50 extends FunSuite {
   test("Euler43"){
@@ -20,4 +21,8 @@ class TestEuler41To50 extends FunSuite {
     assert("1533776805"==cut.execute)
   }
 
+  test("Euler46"){
+    val cut = new Euler46
+    assert("5777"==cut.execute)
+  }
 }

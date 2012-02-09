@@ -23,27 +23,26 @@ object Math {
 	  result
 	}
 	
-	def permute[T](l:List[T]):List[List[T]] = l match {
-	  case a::Nil => List(List(a))
-	  case n::rest =>  var result = List[List[T]]() 
-	  				permute(rest).foreach{ (el:List[T]) =>  
-	  				  result:::=weaveElement(n,el)
-	  				}
-	  				result
-	}
-
 	def fibo(x:Int,y:Int):Stream[Int] = x #:: fibo(y,x+y)
        
     def sequence(start:Long):Stream[Long] = start #:: sequence(start+1)
        
-    def primes(start:Long):Stream[Long] = start #:: sequence(start).filter(isPrime(_)) 
+    def primes(start:Long):Stream[Long] = start #:: sequence(start+1).filter(isPrime(_)) 
        
     def isPrime(x:Long) = !(2L to sqrt(x).toLong).exists(x%_==0)
 
     def triangle(index:Long):Stream[Long] = (index*(index+1)/2) #:: triangle(index+1)
 
+    def primeFactors(n:Long):Set[Long] = 
+	  (Set[Long]()/:primes(2).takeWhile(_<n)){(factors:Set[Long],prime:Long) => 
+	    if(n%prime==0) {
+    	  factors+prime
+	    }else{
+	      factors
+	    }
+	   }
 	
-	def isTriangle(number:Int) = {
+    def isTriangle(number:Int) = {
 	  val index =(sqrt(1+8*number)-1)/2
 	  index.toInt == index
 	}

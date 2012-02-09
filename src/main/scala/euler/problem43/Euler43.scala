@@ -1,5 +1,4 @@
 package euler.problem43
-import euler.utils.Math.permute
 
 object Euler43 {
 	def main(args: Array[String]) {
@@ -12,7 +11,7 @@ object Euler43 {
 class Euler43 {
   val properties = Map(2->2,3->3,4->5,5->7,6->11,7->13,8->17)
   
-  def execute = (0L/:permute(List(0,1,2,3,4,5,6,7,8,9))){(sum:Long,candidate:List[Int]) =>
+  def execute = (0L/:List(0,1,2,3,4,5,6,7,8,9).permutations){(sum:Long,candidate:List[Int]) =>
 		  	sum + (if(fillProperty(candidate)) (0L/:candidate)(_*10+_) else 0) 
 		  }.toString
   

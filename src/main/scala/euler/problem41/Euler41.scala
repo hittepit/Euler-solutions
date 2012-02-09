@@ -8,7 +8,7 @@ object Euler41 {
 	  var solution = 0
 	  (9 to 2 by -1).foreach{(i:Int) =>
 	    val l = (1 to i).toList
-	    permute(l).foreach{(candidateList:List[Int]) =>
+	    l.permutations.foreach{(candidateList:List[Int]) =>
 	      val candidate = (0/:candidateList)(_*10+_)
 	      if(isPrime(candidate) && candidate>solution){
 		    solution = candidate
