@@ -12,6 +12,8 @@ object Math {
 	} 
 	
 	def isNinePandigital(s:String) =s.length()==9 && (s.toSet-'0').size==9
+
+	def isNinePandigitalWithZero(s:String) =s.length()==10 && s.toSet.size==10
 	
 	def weaveElement[T](n:T,l:List[T]):List[List[T]] = {
 	  var result = List[List[T]]()
