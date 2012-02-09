@@ -32,9 +32,9 @@ object Math {
 
 	def fibo(x:Int,y:Int):Stream[Int] = x #:: fibo(y,x+y)
        
-    def sequence(start:Int):Stream[Int] = start #:: sequence(start+1)
+    def sequence(start:Long):Stream[Long] = start #:: sequence(start+1)
        
-    def primes(start:Int):Stream[Int] = start #:: sequence(start).filter(isPrime(_)) 
+    def primes(start:Long):Stream[Long] = start #:: sequence(start).filter(isPrime(_)) 
        
     def isPrime(x:Long) = !(2L to sqrt(x).toLong).exists(x%_==0)
 }

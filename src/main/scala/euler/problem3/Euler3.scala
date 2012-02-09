@@ -7,13 +7,16 @@ import euler.problems.Solution
 import euler.utils.Math._
 /**
  * Solution 1 is the more efficient, but the less functional...
+ * Solution 6 is the most elegant
+ * 
  * Method solution1, elapsed time = 8.901265 ms
  * Method solution2, elapsed time = 19.604576 ms
  * Method solution3, elapsed time = 9.259863 ms
  * Method solution4, elapsed time = 20.523711 ms
  * Method solution5, elapsed time = 10.523711 ms
+ * Method solution6, elapsed time = 10.86066 ms
  *
- * Solution 5 is acceptable
+ * Solution 3,5 and 6 are acceptable
  */
 object Euler3 extends Timer {
   def main(args: Array[String]) {
@@ -24,13 +27,22 @@ object Euler3 extends Timer {
     val sol3 = solution3(value)
     val sol4 = solution4(value)
     val sol5 = solution5(value)
+    val sol6 = solution6(value)
     println("Solution1 = " + sol1)
     println("Solution2 = " + sol2)
     println("Solution3 = " + sol3)
     println("Solution4 = " + sol4)
     println("Solution5 = " + sol5)
+    println("Solution6 = " + sol6)
   }
 
+  def solution6(value:Long) = time("solution 6"){ () =>
+    val it = primes(2).iterator
+    highestPrimeFactor(value,it.next,it)
+  }
+    
+  def highestPrimeFactor(x:Long,n:Long,primeGenerator:Iterator[Long]):Long = if(x%n!=0) highestPrimeFactor(x,primeGenerator.next,primeGenerator) else if(x/n !=1) highestPrimeFactor(x/n,n,primeGenerator) else n 
+    
   def solution5(value: Long) = time("solution5") { () =>
     val max = Math.sqrt(value).longValue()
 
@@ -151,26 +163,11 @@ object Euler3 extends Timer {
 
 class Euler3 extends Solution {
   val value = 600851475143L
-  def execute = solution(value).toString
-
-  def solution(value: Long) = {
-    val max = Math.sqrt(value).longValue()
-
-    var i = 1L
-    var found = false
-    var bestSolution = 0L
-    while (i <= max && !found) {
-      if (value % i == 0) {
-        val highFactor = value / i
-        if (isPrime(highFactor)) {
-          bestSolution = highFactor
-          found = true
-        } else if (isPrime(i)) {
-          bestSolution = i
-        }
-      }
-      i += 1
-    }
-    bestSolution
+  def execute = {
+    val it = primes(2).iterator
+    highestPrimeFactor(value,it.next,it).toString
   }
+  
+  def highestPrimeFactor(x:Long,n:Long,primeGenerator:Iterator[Long]):Long = if(x%n!=0) highestPrimeFactor(x,primeGenerator.next,primeGenerator) else if(x/n !=1) highestPrimeFactor(x/n,n,primeGenerator) else n 
+
 }
