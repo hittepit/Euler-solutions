@@ -1,6 +1,5 @@
 package euler.problem1
 import euler.utils.Timer
-import euler.problems.Solution
 
 object Euler1 extends Timer{
 	def main(args: Array[String]) {
@@ -25,9 +24,10 @@ object Euler1 extends Timer{
 	}
 }
 
-class Euler1 extends Solution{
+class Euler1 {
 	val maximum = 1000
-  def execute = solution(maximum).toString
+  
+	def execute = solution(maximum).toString
 	
 	def solution(max:Int) = (0/:(1 to max-1))((x:Int,y:Int) => if(y%3==0 || y%5==0) x+y else x)
 	

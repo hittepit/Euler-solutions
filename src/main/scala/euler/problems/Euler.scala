@@ -28,7 +28,7 @@ object Euler extends SimpleSwingApplication {
 	    case ButtonClicked(b) => b.enabled = false 
 	      					val sel = problemSelector.selection.item
 	    					val problemC = Class.forName("euler.problem"+sel+".Euler"+sel)
-	    					val problem = problemC.newInstance().asInstanceOf[Solution]
+	    					val problem = problemC.newInstance().asInstanceOf[{def execute():String}]
 	    					val result = problem.execute()
 	    					resultLabel.text = result
 	    					b.enabled = true

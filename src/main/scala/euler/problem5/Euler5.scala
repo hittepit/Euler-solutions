@@ -1,6 +1,6 @@
 package euler.problem5
 
-import euler.problems.Solution
+
 
 object Euler5 {
 	def main(args: Array[String]) {
@@ -16,7 +16,7 @@ object Euler5 {
 	def pgcd(a:Long,b:Long):Long = if(b==0) a else pgcd(b,a%b)
 }
 
-class Euler5 extends Solution {
+class Euler5 {
 	val max =20L
   	
 	def execute = solve(max).toString

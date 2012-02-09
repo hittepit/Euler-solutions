@@ -17,12 +17,12 @@ class TestEuler extends FunSuite {
   
   test("Euler1"){
     val cut = new Euler1
-    assert("233168"==cut.execute())
+    assert("233168"==cut.execute)
   }
   
   test("Euler2"){
     val cut = new Euler2
-    assert("4613732"==cut.execute())
+    assert("4613732"==cut.execute)
   }
   
   test("Euler3"){

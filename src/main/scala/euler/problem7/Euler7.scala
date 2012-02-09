@@ -1,9 +1,7 @@
 package euler.problem7
     
-	import euler.utils.Timer
-
-	import euler.utils.Math._
-	import euler.problems.Solution
+	import euler.utils.Math.isPrime
+import euler.utils.Timer
 	
 	/**
 	 * Solution 1 more functionnal but much more slower. Needs a max number (105000) empiracally determined
@@ -36,7 +34,7 @@ package euler.problem7
 		}
 	}
 
-  class Euler7 extends Solution {
+  class Euler7 {
     def execute = solve(10001).toString
 
     def solve(nth:Int):Long = {

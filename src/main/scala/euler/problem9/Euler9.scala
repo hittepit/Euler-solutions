@@ -1,5 +1,5 @@
 package euler.problem9
-import euler.problems.Solution
+
 
 object Euler9 {
 	def main(args: Array[String]) {
@@ -16,7 +16,7 @@ object Euler9 {
     }
 }
 
-class Euler9 extends Solution {
+class Euler9 {
   def execute = {
     var solution = ""
 	for(c <- 1000 to 1 by -1){

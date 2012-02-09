@@ -1,5 +1,5 @@
 package euler.problem2
-import euler.problems.Solution
+
 
 object Euler2 {
 	def main(args: Array[String]) {
@@ -19,7 +19,7 @@ object Euler2 {
 	def fibo(c:(Int,Int)):(Int,Int) = (c._2,c._1+c._2)
 }
 
-class Euler2 extends Solution {
+class Euler2 {
   def execute = {
 		var i = 2
 		var j = 3

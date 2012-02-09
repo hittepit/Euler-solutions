@@ -9,7 +9,7 @@ object Euler44 {
 	}
 }
 
-class Euler44{
+class Euler44 {
   def execute = {
     var smallest = 1000000000000L
     for(i1 <- 1 to 10000 ; i2<-1 to 10000){

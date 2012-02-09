@@ -1,10 +1,10 @@
 package euler.problem3
 
-import scala.math._
+import scala.math.sqrt
 
+import euler.utils.Math.isPrime
+import euler.utils.Math.primes
 import euler.utils.Timer
-import euler.problems.Solution
-import euler.utils.Math._
 /**
  * Solution 1 is the more efficient, but the less functional...
  * Solution 6 is the most elegant
@@ -161,7 +161,7 @@ object Euler3 extends Timer {
 
 }
 
-class Euler3 extends Solution {
+class Euler3  {
   val value = 600851475143L
   def execute = {
     val it = primes(2).iterator

@@ -1,6 +1,5 @@
 package euler.problem6
 import euler.utils.Timer
-import euler.problems.Solution
 
 object Euler6 extends Timer{
 	def main(args: Array[String]) {
@@ -21,7 +20,7 @@ object Euler6 extends Timer{
 	}
 }
 
-class Euler6 extends Solution {
+class Euler6 {
 	def execute = solve(100).toString
 	
 	def solve(max:Int) = {

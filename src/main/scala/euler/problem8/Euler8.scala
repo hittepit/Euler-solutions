@@ -1,7 +1,6 @@
 package euler.problem8
 
-import euler.problems.Solution
-import euler.utils.Files._
+import euler.utils.Files.read
 
 object Euler8 {
        def main(args: Array[String]) {
@@ -20,7 +19,7 @@ object Euler8 {
        }
 }
 
-class Euler8 extends Solution {
+class Euler8 {
        def execute = {
     	   val s = read("euler/problem8/data.txt")
              solve(s(0)).toString

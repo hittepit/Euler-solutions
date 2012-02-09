@@ -1,6 +1,6 @@
 package euler.problem4
 
-import euler.problems.Solution
+
 
 object Euler4 {
 	def main(args: Array[String]) {
@@ -31,7 +31,7 @@ object Euler4 {
 	}
 }
 
-class Euler4 extends Solution {
+class Euler4 {
 	def execute = {
 		var solution=0
 		for(alpha <- 999 to 100 by -1 ; beta <- alpha to 100 by -1){
