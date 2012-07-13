@@ -11,6 +11,11 @@ object Math {
 	 sAsASet.size==s.length() && (true /: (1 to s.length()))((result:Boolean,n:Int) => result && sAsASet.contains(n))
 	} 
 	
+	def isPalindrome(s:String) = {
+	  val length = s.length-1
+	  ! (0 to length).exists((index:Int) => s.charAt(index)!=s.charAt(length-index))
+	}
+	
 	def isNinePandigital(s:String) =s.length()==9 && (s.toSet-'0').size==9
 
 	def isNinePandigitalWithZero(s:String) =s.length()==10 && s.toSet.size==10
