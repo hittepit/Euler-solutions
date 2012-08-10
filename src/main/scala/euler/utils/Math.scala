@@ -62,3 +62,20 @@ object Math {
     index.toLong == index
   }
 }
+
+class Rational(n:BigInt, d:BigInt){
+  def this(i:BigInt) = this(i,1L)
+  
+  override def toString = num+"/"+den
+  
+  private val g = gcd(n.abs,d.abs)
+  val num = n /g
+  val den = d/g
+  
+  def +(other:Rational):Rational = new Rational(num*other.den+other.num*den,den*other.den)
+  
+  def /(other:Rational):Rational = new Rational(num * other.den, den * other.num)
+  
+   private def gcd(a: BigInt, b: BigInt): BigInt = 
+      if (b == 0) a else gcd(b, a % b)
+}
