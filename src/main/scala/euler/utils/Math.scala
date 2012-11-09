@@ -34,7 +34,7 @@ object Math {
        
     def primes(start:Long):Stream[Long] = start #:: sequence(start+1).filter(isPrime(_)) 
        
-    def isPrime(x:Long) = !(2L to sqrt(x).toLong).exists(x%_==0)
+    def isPrime(x:Long) = (x!=1) && !(2L to sqrt(x).toLong).exists(x%_==0)
 
     def triangle(index:Long):Stream[Long] = (index*(index+1)/2) #:: triangle(index+1)
 

@@ -4,6 +4,8 @@ import euler.utils.Math._
 
 object Euler58 {
   def main(args: Array[String]) {
+//    new Euler58().spiral(1,1,1,1,1).take(4).foreach(println(_))
+    println(isPrime(1))
 	println(new Euler58().execute)
   }
 }
@@ -18,8 +20,8 @@ class Euler58{
 		
 		var inc=2
 		var prime = 0
-		var length = 1
-		
+		var length = 1L
+	
 		do{
 		  d1+=inc
 		  if(isPrime(d1)) prime+=1
@@ -39,4 +41,5 @@ class Euler58{
 		  
 		length.toString
   }
+
 }
