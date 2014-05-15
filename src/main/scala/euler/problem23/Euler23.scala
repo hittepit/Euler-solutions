@@ -1,25 +1,21 @@
 package euler.problem23
 
+import euler.utils.Math.sequence
+
+import scala.collection.mutable
+
 object Euler23 {
 	def main(args: Array[String]) {
+	  val numbers = mutable.Set[Int]()
+	  (1 to 28213).foreach(numbers+=_)
 	  val abundant = abundantNumbers(28123)
-	  println(abundant)
-	  var total = 0L
-	  val correctNumbers = (1L to 28123L).par.filter{(x:Long) =>
-	    var i = 0
-	    var isNotSum = true
-	    while(i<abundant.size && abundant(i)<= x/2 && isNotSum){
-	      if(abundant.contains(x-abundant(i))){
-	        isNotSum=false
-	      }
-	      i += 1
-	    }
-	    isNotSum
+	  for(i <- abundant;
+		  j <- abundant;if(i<=14062)){
+	    numbers-=(i+j).toInt
 	  }
 	  
-	  println(correctNumbers)
-	  
-	  println("Somme = "+(0L/:correctNumbers)(_+_))
+	  var sum = (0l /: numbers)(_+_)
+	  println(sum)
 	}
 	
 	def properDivisors(n:Long) = {
@@ -33,4 +29,10 @@ object Euler23 {
 	def abundantNumbers(max:Long) = {
 	  (1L to max).filter(isAbundant(_))
 	}
+	
+//	def lazyAbundantNumbers(start:Long, max:Long):Stream[Long] = 
+//	  sequence(start).find(isAbundant(_)) match {
+//	    case Some(l) => if(l<=max) l #:: lazyAbundantNumbers(l+1, max) else Stream.Empty
+//	    case None => Stream.Empty
+//	  }
 }
