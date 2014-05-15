@@ -24,7 +24,7 @@ class Euler52 {
 	def isSolution(number:Long):Boolean = {
 		  var liste:List[Char] = Nil
 		    !(1 to 6).exists{(n:Int) =>
-		      val l = (n*number).toString().toList.sort(_<_)
+		      val l = (n*number).toString().toList.sortWith(_<_)
 		      if(liste == Nil) liste =l
 		      l!=liste
 		    }

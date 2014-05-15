@@ -2,6 +2,7 @@ package euler.problem49
 
 import scala.math._
 import euler.utils.Math._
+import java.util.TreeSet
 
 object Euler49 {
 	def main(args: Array[String]) {
@@ -12,7 +13,7 @@ object Euler49 {
 class Euler49{
   
   def execute = {
-    var solutions = Set[String]()
+    var solutions = new TreeSet[String]()
     (1111 to 9999).foreach{(i:Int) => 
     val gaps = scala.collection.mutable.Map[Int,Gap]()
       var numberOfPrimes = 0
@@ -30,7 +31,7 @@ class Euler49{
         if(i.toString.permutations.contains(n3.toString()) && isPrime(n1) && isPrime(n2) && isPrime(n3)){
           val s = n1.toString+n2+n3
           if(n1!=1487 && s.length==12){
-            solutions+=s
+            solutions.add(s)
           }
         }
       }

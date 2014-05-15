@@ -1,6 +1,5 @@
 package euler.problem15
 
-import scala.actors.Actor
 
 object Euler15 {
 	def main(args: Array[String]) {
