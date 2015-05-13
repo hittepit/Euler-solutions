@@ -14,10 +14,10 @@ object Euler18 extends Timer{
 	}
 	
 	def reduce(lastComputedLine:List[Int],tree:List[String]):List[Int] = lastComputedLine match {
-	  case List() => val li = List.fromArray(tree(tree.size-1).split(" ").map(_.toInt))
+	  case List() => val li = tree(tree.size-1).split(" ").map(_.toInt).toList
 	  				reduce(li,tree)
 	  case List(n) => List(n)
-	  case l:List[Int] => val newLine = List.fromArray(tree(l.size-2).split(" ").map(_.toInt))
+	  case l:List[Int] => val newLine = tree(l.size-2).split(" ").map(_.toInt).toList
 	  						var verNewLine = List[Int]()
 	  						(0 to newLine.size-1).foreach((index:Int)=>
 	  						  		verNewLine= verNewLine:::List(newLine(index) + Math.max(l(index),l(index+1)))

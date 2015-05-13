@@ -1,6 +1,8 @@
 #Eclipse
 .classpath
 .project
+.settings
+/bin
 
 #sbt
 .cache
