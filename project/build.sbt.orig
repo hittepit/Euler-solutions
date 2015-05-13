@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-resolvers += Classpaths.typesafeResolver
-
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "3.0.0")
-=======
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.0")
->>>>>>> dc66ae8d9f21bd152455500131c46e89518df896
