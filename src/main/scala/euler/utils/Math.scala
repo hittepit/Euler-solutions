@@ -1,20 +1,22 @@
 package euler.utils
 
 import scala.math._
+import scala.annotation.tailrec
 
 object Math {
-	def fact(i:BigInt):BigInt = if(i==0) BigInt(1) else i*fact(i-1)
-	def fact(i:Long):Long = if(i==0) 1L else i*fact(i-1)
-
+	def fact(i:BigInt):BigInt = {
+	  @tailrec
+	  def factr(n:BigInt, acc:BigInt):BigInt = if(n==0) acc else factr(n-1, n*acc)
+	  
+	  factr(i,1)
+	}
+	
 	def isPandigital(s:String):Boolean = {
 	 val sAsASet = (s.toSet-'0').map(_.toString.toInt)
 	 sAsASet.size==s.length() && (true /: (1 to s.length()))((result:Boolean,n:Int) => result && sAsASet.contains(n))
 	} 
 	
-	def isPalindrome(s:String) = {
-	  val length = s.length-1
-	  ! (0 to length).exists((index:Int) => s.charAt(index)!=s.charAt(length-index))
-	}
+	def isPalindrome(s:String) = s.reverse == s
 	
 	def isNinePandigital(s:String) =s.length()==9 && (s.toSet-'0').size==9
 
